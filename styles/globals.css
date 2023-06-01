@@ -26,4 +26,5 @@ body {
     )
     rgb(var(--background-start-rgb));
   font-family: "Lora";
+  color: "#14213D";
 }
