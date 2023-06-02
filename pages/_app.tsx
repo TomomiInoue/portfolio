@@ -7,8 +7,8 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Hello Again Venture Studio</title>
-        <meta name="description" content="Hello Again Venture Studio" />
+        <title>Tomomi Inoue Frontend Web Developer</title>
+        <meta name="description" content="Tomomi" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.png" />
         <meta name="theme-color" content="#FFFFFF" />

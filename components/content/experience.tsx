@@ -19,7 +19,7 @@ const experience = [
 
 export default function Experience() {
   return (
-    <section>
+    <section className="bg-grey">
       <Container>
         <h2 className="text-primary text-72px font-bold">Experience</h2>
         <div className="border-l-2 border-primary">

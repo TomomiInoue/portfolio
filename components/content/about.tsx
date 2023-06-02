@@ -1,4 +1,5 @@
 import Container from "../common/container";
+import StickyBox from "react-sticky-box";
 
 const bio = [
   "My name is Chase Ohlson. I’m a frontend software engineer & freelance web developer in Los Angeles -- with roots in digital marketing & SEO. I'm passionate about music, technology and basically everything that makes the internet tick.",
@@ -12,18 +13,26 @@ const bio = [
 
 export default function About() {
   return (
-    <section className="bg-white py-10 md:py-[88px] lg:py-[120px]">
+    <section className="bg-grey py-10 md:py-[88px] lg:py-[120px]">
       <Container>
-        <div className="max-w-[880px] m-auto">
-          <h2 className="text-primary text-72px font-bold">About me</h2>
-          {bio.map((p, index) => (
-            <p
-              key={index}
-              className="text-16px md:text-20px font-normal text-navy mb-5"
-            >
-              {p}
-            </p>
-          ))}
+        <div className="block md:grid md:grid-cols-12 md:gap-x-6">
+          <div className="col-span-4">
+            <StickyBox offsetTop={120} offsetBottom={20}>
+              <div className="block">
+                <h2 className="text-primary text-72px font-bold">About me</h2>
+              </div>
+            </StickyBox>
+          </div>
+          <div className="col-span-7">
+            {bio.map((p, index) => (
+              <p
+                key={index}
+                className="text-16px md:text-20px font-normal text-navy mb-5"
+              >
+                {p}
+              </p>
+            ))}
+          </div>
         </div>
       </Container>
     </section>
