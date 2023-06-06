@@ -22,3 +22,11 @@ body {
   font-family: "Lora";
   color: "#14213D";
 }
+
+.swiper-wrapper {
+  padding-bottom: 40px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #14213d !important;
+}

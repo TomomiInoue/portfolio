@@ -2,13 +2,11 @@ import Container from "../common/container";
 import StickyBox from "react-sticky-box";
 
 const bio = [
-  "My name is Chase Ohlson. I’m a frontend software engineer & freelance web developer in Los Angeles -- with roots in digital marketing & SEO. I'm passionate about music, technology and basically everything that makes the internet tick.",
+  "Hello, I'm Tomomi Inoue, a dedicated frontend web developer with two years of full-time experience. I specialize in creating stunning websites using modern technologies such as ReactJS, TypeScript, Tailwind CSS, and headless CMS platforms like Contentful, Strapi, KeyStone, and Keystone Static. My goal is to deliver exceptional user experiences and visually appealing designs.",
 
-  "My work currently consists of a full time engineering role at The Noun Project (working on Lingo) & managing ongoing freelance clients and side projects. I find this balancing act to be super resourceful in terms my learning as a web developer, as well as for keeping up with the rapid expansion of developer tools, libraries, frameworks, etc.",
+  "I am passionate about leveraging my skills to develop dynamic CMS-driven websites that seamlessly blend functionality and aesthetics. With a keen eye for detail and a strong focus on creating visually appealing interfaces, I take pride in transforming ideas into captivating web experiences.",
 
-  "My freelance web development roots are in Wordpress & Shopify, of which I'm self taught. In 2017, I started at UCLA to broaden my knowledge of the Node.js ecosystem. Since then, I fell in love with & have been primarily using React & Redux in web applications. For static sites, I love using Gatsby for creating blazing fast, SEO-driven headless frontend user interfaces.",
-
-  "Whether you're a business owner looking to get started on a app or web development project with a freelance web developer, a developer looking to collaborate on something cool, or just wanting to say hi, shoot me a message and let's work together.",
+  "If you're looking for a frontend web developer who is committed to delivering high-quality results and thrives in a collaborative environment, I would love to connect and discuss how I can contribute to your projects.",
 ];
 
 export default function About() {

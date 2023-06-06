@@ -13,13 +13,11 @@ import "swiper/css/autoplay";
 import { useRef } from "react";
 
 const bio = [
-  "My name is Chase Ohlson. I’m a frontend software engineer & freelance web developer in Los Angeles -- with roots in digital marketing & SEO. I'm passionate about music, technology and basically everything that makes the internet tick.",
+  "Outside of my professional pursuits, I lead an active and adventurous lifestyle. Surfing has been a longtime passion of mine, and I find solace and inspiration in riding the waves. I also have an insatiable wanderlust and love exploring the beauty of nature through exciting adventures and travel.",
 
-  "My work currently consists of a full time engineering role at The Noun Project (working on Lingo) & managing ongoing freelance clients and side projects. I find this balancing act to be super resourceful in terms my learning as a web developer, as well as for keeping up with the rapid expansion of developer tools, libraries, frameworks, etc.",
+  "These personal experiences provide me with a fresh perspective, fuel my creativity, and contribute to my overall well-being. They remind me of the importance of balance and finding inspiration beyond the screen.",
 
-  "My freelance web development roots are in Wordpress & Shopify, of which I'm self taught. In 2017, I started at UCLA to broaden my knowledge of the Node.js ecosystem. Since then, I fell in love with & have been primarily using React & Redux in web applications. For static sites, I love using Gatsby for creating blazing fast, SEO-driven headless frontend user interfaces.",
-
-  "Whether you're a business owner looking to get started on a app or web development project with a freelance web developer, a developer looking to collaborate on something cool, or just wanting to say hi, shoot me a message and let's work together.",
+  "Feel free to reach out to me for any web development opportunities or to share stories about our shared passions. Let's connect and create something amazing together.",
 ];
 
 const images = [
@@ -28,6 +26,12 @@ const images = [
   },
   {
     url: "/images/under_rip.png",
+  },
+  {
+    url: "/images/sunset_surf.png",
+  },
+  {
+    url: "/images/blue_water.png",
   },
 ];
 export default function Private() {
@@ -38,9 +42,12 @@ export default function Private() {
         <div className="block md:grid md:grid-cols-12 md:gap-x-6">
           <div className="col-span-6">
             <div className="block">
-              <h2 className="text-primary text-48px font-bold mb-5 md:mb-10">
-                What I am doing outside of coding
+              <h2 className="text-primary text-48px font-bold ">
+                When I&apos;m Off-Screen:
               </h2>
+              <h5 className="text-primary text-28px font-semibold mb-5 md:mb-10">
+                Exploring Life Beyond the Computer
+              </h5>
             </div>
             {bio.map((p, index) => (
               <p
@@ -81,8 +88,13 @@ export default function Private() {
             >
               {images.map((image, index) => (
                 <SwiperSlide key={index}>
-                  <div className="relative w-[700px] h-[700px]" key={index}>
-                    <Image src={image.url} alt="photos surfing" fill />
+                  <div className="relative w-full h-[500px]" key={index}>
+                    <Image
+                      src={image.url}
+                      alt="photos surfing"
+                      fill
+                      className="object-contain"
+                    />
                   </div>
                 </SwiperSlide>
               ))}
