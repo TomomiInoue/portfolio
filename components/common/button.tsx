@@ -19,7 +19,7 @@ const Button: React.FC<ButtonProps> = ({
     <button
       {...rest}
       className={clsx(
-        "py-[10px] py-2 rounded-sm text-14px font-semibold hover:shadow-lg",
+        "py-2 text-20px font-semibold hover:shadow-lg rounded-lg ",
         variant === "primary" &&
           "border-navy border-2 text-navy hover:bg-black",
         variant === "secondary" &&

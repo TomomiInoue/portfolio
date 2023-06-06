@@ -19,15 +19,16 @@ const experience = [
 
 export default function Experience() {
   return (
-    <section className="bg-grey">
+    <section className="bg-grey" id="experience">
       <Container>
         <h2 className="text-primary text-72px font-bold">Experience</h2>
-        <div className="border-l-2 border-primary">
-          <div className="w-1/2 mr-auto">
+        <div className="grid grid-cols-12 gap-x-6 border-l-2 border-primary">
+          <div className="col-span-5 mr-auto">
             {experience.map((e, index) => (
               <div key={index}>{e.company}</div>
             ))}
           </div>
+          <div className="col-span-7">{experience[0].body}</div>
         </div>
       </Container>
     </section>

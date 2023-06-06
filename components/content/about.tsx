@@ -13,11 +13,11 @@ const bio = [
 
 export default function About() {
   return (
-    <section className="bg-grey py-10 md:py-[88px] lg:py-[120px]">
+    <section className="bg-grey py-10 md:py-[88px] lg:py-[120px]" id="about">
       <Container>
         <div className="block md:grid md:grid-cols-12 md:gap-x-6">
           <div className="col-span-4">
-            <StickyBox offsetTop={120} offsetBottom={20}>
+            <StickyBox offsetTop={120} offsetBottom={0}>
               <div className="block">
                 <h2 className="text-primary text-72px font-bold">About me</h2>
               </div>

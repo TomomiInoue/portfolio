@@ -1,4 +1,5 @@
 import Container from "@/components/common/container";
+import Link from "next/link";
 
 const menuItems = [
   {
@@ -17,11 +18,13 @@ const menuItems = [
 
 export default function DesktopHeader() {
   return (
-    <header className="fixed z-50 bg-white h-14 w-full">
+    <header className="fixed z-50 bg-navy text-white w-full">
       <Container>
-        <div className="flex">
+        <div className="flex justify-end ml-auto py-5">
           {menuItems.map((item, index) => (
-            <div key={index}>{item.title}</div>
+            <div key={index} className="mx-5 text-20px">
+              <Link href={`#${item.title}`}>{item.title}</Link>
+            </div>
           ))}
         </div>
       </Container>
