@@ -19,11 +19,9 @@ const Button: React.FC<ButtonProps> = ({
     <button
       {...rest}
       className={clsx(
-        "py-2 text-20px font-semibold hover:shadow-lg rounded-lg ",
-        variant === "primary" &&
-          "border-navy border-2 text-navy hover:bg-black",
-        variant === "secondary" &&
-          "border-white border-2 text-primary hover:bg-grey",
+        "py-2 text-20px font-semibold hover:shadow-lg rounded-lg hover:scale-105 ",
+        variant === "primary" && "border-navy border-2 text-navy ",
+        variant === "secondary" && "border-white border-2 text-primary",
         size === "large" && "px-10 md:px-[80px] ",
         size === "small" && "px-4",
         className

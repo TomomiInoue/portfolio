@@ -1,6 +1,7 @@
 import Container from "@/components/common/container";
 import clsx from "clsx";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 const menuItems = [
@@ -28,6 +29,8 @@ const menuItems = [
 
 export default function DesktopHeader() {
   const [isScrolled, setIsScrolled] = useState<boolean>();
+  const router = useRouter();
+
   const handleClick = (id: string) => {
     const element = document.getElementById(id);
 
@@ -50,6 +53,7 @@ export default function DesktopHeader() {
     }
     console.log(isScrolled);
   }, []);
+  console.log(router.asPath);
 
   return (
     <header
@@ -63,7 +67,12 @@ export default function DesktopHeader() {
           {menuItems.map((item, index) => (
             <div
               key={index}
-              className="mx-5 text-20px"
+              className={clsx(
+                "mx-5 text-20px hover:scale-125",
+                router.asPath.includes(item.title)
+                  ? "border-b-2 border-white"
+                  : ""
+              )}
               onClick={() => handleClick(item.link)}
             >
               <Link href={`#${item.title}`}>{item.title}</Link>
