@@ -12,12 +12,12 @@ import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import { useRef } from "react";
 
+import StickyBox from "react-sticky-box";
+
 const bio = [
-  "Outside of my professional pursuits, I lead an active and adventurous lifestyle. Surfing has been a longtime passion of mine, and I find solace and inspiration in riding the waves. I also have an insatiable wanderlust and love exploring the beauty of nature through exciting adventures and travel.",
-
-  "These personal experiences provide me with a fresh perspective, fuel my creativity, and contribute to my overall well-being. They remind me of the importance of balance and finding inspiration beyond the screen.",
-
-  "Feel free to reach out to me for any web development opportunities or to share stories about our shared passions. Let's connect and create something amazing together.",
+  "Outside of my professional pursuits, I lead an active and adventurous lifestyle while also maintaining a strong commitment to environmental sustainability. Surfing has been a longtime passion of mine, and through my experiences in the ocean, I have developed a deep appreciation for the beauty of nature. It has fueled my desire to protect our planet and combat climate change.",
+  "I have an insatiable wanderlust and love exploring the wonders of nature, from pristine coastlines to majestic mountains. These experiences have not only provided me with a fresh perspective but have also deepened my commitment to environmental conservation. I believe in the importance of finding a balance between technology and nature, recognizing that our digital advancements should not come at the expense of the environment.",
+  "My passion for climate change, protecting nature, and environmental concern motivates me to seek opportunities where I can contribute to the sustainability efforts of companies. I am committed to utilizing my web development skills to create digital solutions that promote eco-friendly practices, raise awareness about environmental issues, and inspire positive change. Feel free to reach out to me for any web development opportunities or to discuss how we can collaborate in using technology for the betterment of our planet. Let's connect and create something amazing together, while making a positive impact on our environment. This version emphasizes your passion for environmental sustainability and aligns it with your web development skills. It conveys your desire to work for companies that share your commitment to protecting the environment. Feel free to adjust and personalize the content to accurately reflect your own experiences and values. If you have any further questions or need additional assistance, please let me know!",
 ];
 
 const images = [
@@ -59,46 +59,48 @@ export default function Private() {
             ))}
           </div>
           <div className="col-span-5 col-start-8">
-            <Swiper
-              modules={[Pagination, Autoplay]}
-              pagination={{ clickable: true }}
-              onSwiper={(swiper) => {
-                sliderRef.current = swiper;
-              }}
-              loop
-              autoplay={{ delay: 2500 }}
-              slidesPerView={1}
-              //   breakpoints={{
-              //     320: {
-              //       slidesPerView: 1,
-              //       spaceBetween: 10,
-              //       centeredSlides: true,
-              //     },
-              //     640: {
-              //       slidesPerView: 2.1,
-              //       spaceBetween: 15,
-              //       centeredSlides: false,
-              //     },
-              //     790: {
-              //       slidesPerView: 2.5,
-              //       spaceBetween: 20,
-              //       centeredSlides: false,
-              //     },
-              //   }}
-            >
-              {images.map((image, index) => (
-                <SwiperSlide key={index}>
-                  <div className="relative w-full h-[500px]" key={index}>
-                    <Image
-                      src={image.url}
-                      alt="photos surfing"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
+            <StickyBox offsetTop={120} offsetBottom={0}>
+              <Swiper
+                modules={[Pagination, Autoplay]}
+                pagination={{ clickable: true }}
+                onSwiper={(swiper) => {
+                  sliderRef.current = swiper;
+                }}
+                loop
+                autoplay={{ delay: 1800 }}
+                slidesPerView={1}
+                //   breakpoints={{
+                //     320: {
+                //       slidesPerView: 1,
+                //       spaceBetween: 10,
+                //       centeredSlides: true,
+                //     },
+                //     640: {
+                //       slidesPerView: 2.1,
+                //       spaceBetween: 15,
+                //       centeredSlides: false,
+                //     },
+                //     790: {
+                //       slidesPerView: 2.5,
+                //       spaceBetween: 20,
+                //       centeredSlides: false,
+                //     },
+                //   }}
+              >
+                {images.map((image, index) => (
+                  <SwiperSlide key={index}>
+                    <div className="relative w-full h-[500px]" key={index}>
+                      <Image
+                        src={image.url}
+                        alt="photos surfing"
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </StickyBox>
           </div>
         </div>
       </Container>
