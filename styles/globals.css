@@ -23,6 +23,12 @@ body {
   color: "#14213D";
 }
 
+.header-scrolled {
+  background-color: #14213d;
+  color: #ffffff;
+  transition: all 1s ease-in-out;
+}
+
 .swiper-wrapper {
   padding-bottom: 40px !important;
 }

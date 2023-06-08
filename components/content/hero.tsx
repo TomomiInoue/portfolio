@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Container from "../common/container";
 import Button from "../common/button";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   return (

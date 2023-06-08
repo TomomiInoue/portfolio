@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Container from "../common/container";
 import clsx from "clsx";
+import { motion } from "framer-motion";
+import { useAutoAnimate } from "@formkit/auto-animate/react";
 
 const experience = [
   {
@@ -42,36 +44,87 @@ const experience = [
 ];
 
 export default function Experience() {
-  const [activeIndex, setActiveIndex] = useState(1);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [animationParent] = useAutoAnimate();
 
   const handleClick = (index: number) => {
     setActiveIndex(index);
   };
 
-  // const checkActive = (index:number, className) => activeIndex === index ? className :
+  const tabVariant = {
+    active: {
+      borderBottom: "2px solid #FCA311",
+      borderWidth: "100%",
+      transition: {
+        type: "tween",
+        duration: 0.4,
+      },
+    },
+    inactive: {
+      borderBottom: "0px solid #FCA311",
+      borderWidth: "0%",
+      transition: {
+        type: "tween",
+        duration: 0.4,
+      },
+    },
+  };
 
+  const tabTextVariant = {
+    active: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+    inactive: {
+      opacity: 0,
+      y: 10,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
   return (
     <section className="bg-grey" id="experience">
       <Container>
         <h2 className="text-primary text-72px font-bold mb-10">Experience</h2>
-        <div className="grid grid-cols-12 gap-x-6 border-l-2 border-primary">
+        <div
+          className="grid grid-cols-12 gap-x-6 border-l-2 border-primary"
+          ref={animationParent}
+        >
           <div className="col-span-4 mr-auto w-full pl-3">
             {experience.map((e, index) => (
-              <div
+              <motion.div
                 key={index}
                 onClick={() => handleClick(index)}
                 className={clsx(
-                  "font-semibold text-32px py-10 cursor-pointer w-full",
+                  "text-32px py-10 cursor-pointer w-full",
                   index === activeIndex
-                    ? "text-primary border-b-2 border-primary"
-                    : "text-navy"
+                    ? "text-primary font-semibold"
+                    : "text-navy font-normal"
                 )}
+                variants={tabVariant}
+                animate={activeIndex === index ? "active" : "inactive"}
               >
                 {e.company}
-              </div>
+              </motion.div>
             ))}
           </div>
-          <div className="col-span-7 col-start-6">
+          <motion.div
+            className="col-span-7 col-start-6"
+            initial={{
+              opacity: 0,
+            }}
+            animate={{
+              opacity: 1,
+              transition: {
+                delayChildren: 0.5,
+                staggerDirection: -1,
+              },
+            }}
+          >
             <div className="font-medium text-20px md:text-28px mb-10">
               {experience[activeIndex].period}
             </div>
@@ -83,7 +136,7 @@ export default function Experience() {
                 {content}
               </p>
             ))}
-          </div>
+          </motion.div>
         </div>
       </Container>
     </section>

@@ -37,9 +37,12 @@ const images = [
 export default function Private() {
   const sliderRef = useRef<SwiperRef>();
   return (
-    <section className="bg-grey py-10 md:py-[88px] lg:py-[120px]">
+    <section
+      className="bg-grey py-10 md:py-[88px] lg:py-[120px]"
+      id="lifestyle"
+    >
       <Container>
-        <div className="block md:grid md:grid-cols-12 md:gap-x-6">
+        <div className="block md:grid md:grid-cols-12 md:gap-x-6 items-center">
           <div className="col-span-6">
             <div className="block">
               <h2 className="text-primary text-48px font-bold ">
@@ -59,48 +62,46 @@ export default function Private() {
             ))}
           </div>
           <div className="col-span-5 col-start-8">
-            <StickyBox offsetTop={120} offsetBottom={0}>
-              <Swiper
-                modules={[Pagination, Autoplay]}
-                pagination={{ clickable: true }}
-                onSwiper={(swiper) => {
-                  sliderRef.current = swiper;
-                }}
-                loop
-                autoplay={{ delay: 1800 }}
-                slidesPerView={1}
-                //   breakpoints={{
-                //     320: {
-                //       slidesPerView: 1,
-                //       spaceBetween: 10,
-                //       centeredSlides: true,
-                //     },
-                //     640: {
-                //       slidesPerView: 2.1,
-                //       spaceBetween: 15,
-                //       centeredSlides: false,
-                //     },
-                //     790: {
-                //       slidesPerView: 2.5,
-                //       spaceBetween: 20,
-                //       centeredSlides: false,
-                //     },
-                //   }}
-              >
-                {images.map((image, index) => (
-                  <SwiperSlide key={index}>
-                    <div className="relative w-full h-[500px]" key={index}>
-                      <Image
-                        src={image.url}
-                        alt="photos surfing"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </StickyBox>
+            <Swiper
+              modules={[Pagination, Autoplay]}
+              pagination={{ clickable: true }}
+              onSwiper={(swiper) => {
+                sliderRef.current = swiper;
+              }}
+              loop
+              autoplay={{ delay: 1800 }}
+              slidesPerView={1}
+              //   breakpoints={{
+              //     320: {
+              //       slidesPerView: 1,
+              //       spaceBetween: 10,
+              //       centeredSlides: true,
+              //     },
+              //     640: {
+              //       slidesPerView: 2.1,
+              //       spaceBetween: 15,
+              //       centeredSlides: false,
+              //     },
+              //     790: {
+              //       slidesPerView: 2.5,
+              //       spaceBetween: 20,
+              //       centeredSlides: false,
+              //     },
+              //   }}
+            >
+              {images.map((image, index) => (
+                <SwiperSlide key={index}>
+                  <div className="relative w-full h-[500px]" key={index}>
+                    <Image
+                      src={image.url}
+                      alt="photos surfing"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         </div>
       </Container>
