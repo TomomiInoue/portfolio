@@ -130,10 +130,10 @@ export default function Experience() {
               },
             }}
           >
-            <div className="font-medium text-20px md:text-28px mb-3 md:mb-10">
+            <div className="font-medium text-20px md:text-28px mb-3 md:mb-6">
               {experience[activeIndex].period}
             </div>
-            <div className="font-medium text-20px md:text-28px mb-5 md:mb-10">
+            <div className="font-semibold text-20px md:text-28px mb-5 md:mb-10">
               {experience[activeIndex].position}
             </div>
             {experience[activeIndex].body.map((content, index) => (

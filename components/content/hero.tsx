@@ -2,6 +2,7 @@ import Image from "next/image";
 import Container from "../common/container";
 import Button from "../common/button";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -19,7 +20,7 @@ export default function Hero() {
               I am Frontend web developer
             </p>
             <Button variant="primary" className="mt-5 md:mt-10">
-              Contact
+              <Link href="mailto:chibico1216@gmail.com">Contact</Link>
             </Button>
           </div>
           <div className="col-span-6">

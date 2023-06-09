@@ -42,7 +42,7 @@ export default function Private() {
       id="lifestyle"
     >
       <Container>
-        <div className="block md:grid md:grid-cols-12 md:gap-x-6 ite">
+        <div className="block md:grid md:grid-cols-12 md:gap-x-6 items-center">
           <div className="col-span-6">
             <div className="block">
               <h2 className="text-primary text-28px md:text-48px font-bold ">
