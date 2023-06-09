@@ -42,13 +42,13 @@ export default function Private() {
       id="lifestyle"
     >
       <Container>
-        <div className="block md:grid md:grid-cols-12 md:gap-x-6 items-center">
+        <div className="block md:grid md:grid-cols-12 md:gap-x-6 ite">
           <div className="col-span-6">
             <div className="block">
-              <h2 className="text-primary text-48px font-bold ">
+              <h2 className="text-primary text-28px md:text-48px font-bold ">
                 When I&apos;m Off-Screen:
               </h2>
-              <h5 className="text-primary text-28px font-semibold mb-5 md:mb-10">
+              <h5 className="text-primary text-20px md:text-28px font-semibold mb-5 md:mb-10">
                 Exploring Life Beyond the Computer
               </h5>
             </div>

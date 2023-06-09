@@ -87,20 +87,25 @@ export default function Experience() {
     },
   };
   return (
-    <section className="bg-grey" id="experience">
+    <section
+      className="bg-grey py-10 md:py-[80px] lg:py-[120px]"
+      id="experience"
+    >
       <Container>
-        <h2 className="text-primary text-72px font-bold mb-10">Experience</h2>
+        <h2 className="text-primary text-36px md:text-72px font-bold mb-10">
+          Experience
+        </h2>
         <div
-          className="grid grid-cols-12 gap-x-6 border-l-2 border-primary"
+          className="block md:grid grid-cols-12 gap-x-6 border-l-2 border-primary"
           ref={animationParent}
         >
-          <div className="col-span-4 mr-auto w-full pl-3">
+          <div className="flex md:block md:col-span-4 mr-auto w-full pl-3">
             {experience.map((e, index) => (
               <motion.div
                 key={index}
                 onClick={() => handleClick(index)}
                 className={clsx(
-                  "text-32px py-10 cursor-pointer w-full",
+                  "text-32px py-3 mb-5 md:mb-0 md:py-10 cursor-pointer w-full",
                   index === activeIndex
                     ? "text-primary font-semibold"
                     : "text-navy font-normal"
@@ -113,7 +118,7 @@ export default function Experience() {
             ))}
           </div>
           <motion.div
-            className="col-span-7 col-start-6"
+            className="col-span-7 col-start-6 ml-4 md:ml-0"
             initial={{
               opacity: 0,
             }}
@@ -125,8 +130,11 @@ export default function Experience() {
               },
             }}
           >
-            <div className="font-medium text-20px md:text-28px mb-10">
+            <div className="font-medium text-20px md:text-28px mb-3 md:mb-10">
               {experience[activeIndex].period}
+            </div>
+            <div className="font-medium text-20px md:text-28px mb-5 md:mb-10">
+              {experience[activeIndex].position}
             </div>
             {experience[activeIndex].body.map((content, index) => (
               <p

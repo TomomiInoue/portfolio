@@ -17,7 +17,9 @@ export default function About() {
           <div className="col-span-4">
             <StickyBox offsetTop={120} offsetBottom={0}>
               <div className="block">
-                <h2 className="text-primary text-72px font-bold">About me</h2>
+                <h2 className="text-primary text-36px md:text-72px font-bold  mb-5 md:mb-0">
+                  About me
+                </h2>
               </div>
             </StickyBox>
           </div>

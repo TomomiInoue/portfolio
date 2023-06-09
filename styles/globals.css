@@ -36,3 +36,14 @@ body {
 .swiper-pagination-bullet-active {
   background-color: #14213d !important;
 }
+
+.burger-wrapper {
+  position: absolute !important;
+  top: 12px;
+  right: 5%;
+}
+
+.burger-bar {
+  transition: all 0.3s linear;
+  transform-origin: 1px;
+}

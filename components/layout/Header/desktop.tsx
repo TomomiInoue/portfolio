@@ -51,15 +51,13 @@ export default function DesktopHeader() {
         setIsScrolled(window.pageYOffset > 200)
       );
     }
-    console.log(isScrolled);
   }, []);
-  console.log(router.asPath);
 
   return (
     <header
       className={clsx(
-        "hidden md:flex fixed z-50 w-full",
-        isScrolled ? "header-scrolled" : "bg-primary text-navy"
+        "hidden md:flex fixed z-50 w-full text-white",
+        isScrolled ? "header-scrolled" : "bg-primary"
       )}
     >
       <Container>
