@@ -29,7 +29,7 @@ export default function Hero() {
                 src="/images/bio_rounded.png"
                 alt="profile photo"
                 fill
-                className="object-contain"
+                className="object-contain image-fade-in"
               />
             </div>
           </div>

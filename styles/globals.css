@@ -75,6 +75,21 @@ body {
   background-color: #e5e5e5;
   transition: all 1s ease-in-out;
 }
+
+.image-fade-in {
+  animation: imageFadeIn 0.8s ease-in-out;
+}
+
+@keyframes imageFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
 .swiper-wrapper {
   padding-bottom: 40px !important;
 }
