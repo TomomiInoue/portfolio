@@ -8,17 +8,40 @@ import { menuItems } from "./desktop";
 export default function Menu() {
   const [isOpen, setIsOpen] = useAtom(menuAtom);
 
-  const handleClose = () => {
+  const handleClick = (id: string) => {
     setIsOpen(false);
+    const element = document.getElementById(id);
+
+    if (element) {
+      element.focus();
+      setTimeout(() => {
+        window.scroll({
+          top: element.offsetTop - 40,
+          behavior: "smooth",
+        });
+      }, 500);
+    }
   };
 
   return (
     <menu
-      className={clsx("bg-white fixed w-screen h-screen text-navy text-center")}
+      className={clsx(
+        "bg-white fixed w-screen h-screen text-navy text-center",
+        isOpen ? "menu-open" : "menu-close"
+      )}
     >
-      <div className="block mt-20">
+      <div className="block mt-20 space-y-5">
         {menuItems.map((item: any, index: number) => (
-          <div key={index}>{item.title}</div>
+          <div
+            key={index}
+            className={clsx(
+              "text-16px font-medium text-navy",
+              isOpen ? "items-open" : ""
+            )}
+            onClick={() => handleClick(item.link)}
+          >
+            {item.title}
+          </div>
         ))}
       </div>
     </menu>

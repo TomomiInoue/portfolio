@@ -96,7 +96,7 @@ export default function Experience() {
           Experience
         </h2>
         <div
-          className="block md:grid grid-cols-12 gap-x-6 border-l-2 border-primary"
+          className="block md:grid grid-cols-12 gap-x-6 md:border-l-2 md:border-primary"
           ref={animationParent}
         >
           <div className="flex md:block md:col-span-4 mr-auto w-full pl-3">
@@ -105,7 +105,7 @@ export default function Experience() {
                 key={index}
                 onClick={() => handleClick(index)}
                 className={clsx(
-                  "text-32px py-3 mb-5 md:mb-0 md:py-10 cursor-pointer w-full",
+                  "text-24px md:text-32px py-3 mb-5 md:mb-0 md:py-10 cursor-pointer w-full",
                   index === activeIndex
                     ? "text-primary font-semibold"
                     : "text-navy font-normal"
@@ -118,7 +118,7 @@ export default function Experience() {
             ))}
           </div>
           <motion.div
-            className="col-span-7 col-start-6 ml-4 md:ml-0"
+            className="col-span-7 col-start-6 "
             initial={{
               opacity: 0,
             }}
