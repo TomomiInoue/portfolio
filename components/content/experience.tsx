@@ -99,7 +99,7 @@ export default function Experience() {
           className="block md:grid grid-cols-12 gap-x-6 md:border-l-2 md:border-primary"
           ref={animationParent}
         >
-          <div className="flex md:block md:col-span-4 mr-auto w-full pl-3">
+          <div className="flex md:block md:col-span-4 mr-auto w-full md:pl-3">
             {experience.map((e, index) => (
               <motion.div
                 key={index}
