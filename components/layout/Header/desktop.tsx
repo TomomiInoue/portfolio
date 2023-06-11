@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
-const menuItems = [
+export const menuItems = [
   {
     title: "About",
     link: "about",
@@ -48,7 +48,7 @@ export default function DesktopHeader() {
   useEffect(() => {
     if (typeof window !== "undefined") {
       window.addEventListener("scroll", () =>
-        setIsScrolled(window.pageYOffset > 200)
+        setIsScrolled(window.pageYOffset > 80)
       );
     }
   }, []);
