@@ -44,7 +44,7 @@ export default function Work() {
         <h2 className="text-primary text-36px md:text-72px font-bold mb-10">
           Recent work and technology
         </h2>
-        <div className="text-16px md:text-20px lg:w-[60%]">
+        <div className="text-20px md:text-24px lg:w-[60%]">
           Upon request, I am prepared to provide a comprehensive showcase of my
           recent work during an in-person meeting. This will allow me to discuss
           the projects in detail, share my contributions, and demonstrate the

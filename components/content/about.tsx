@@ -27,7 +27,7 @@ export default function About() {
             {bio.map((p, index) => (
               <p
                 key={index}
-                className="text-16px md:text-20px font-normal text-navy mb-5"
+                className="text-20px md:text-24px font-normal text-navy mb-5"
               >
                 {p}
               </p>

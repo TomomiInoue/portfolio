@@ -30,12 +30,12 @@ export default function Menu() {
         isOpen ? "menu-open" : "menu-close"
       )}
     >
-      <div className="block mt-20 space-y-5">
+      <div className="block mt-20 space-y-6">
         {menuItems.map((item: any, index: number) => (
           <div
             key={index}
             className={clsx(
-              "text-16px font-medium text-navy",
+              "text-20px font-medium text-navy",
               isOpen ? "items-open" : ""
             )}
             onClick={() => handleClick(item.link)}
