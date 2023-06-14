@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Container from "../../common/container";
-import Button from "@/components/common/button";
+import Button from "@/app/components/common/button";
 import Link from "next/link";
 
 export const works = [

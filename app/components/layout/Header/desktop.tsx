@@ -1,7 +1,9 @@
-import Container from "@/components/common/container";
+"use client";
+
+import { usePathname, useRouter } from "next/navigation";
+import Container from "@/app/components/common/container";
 import clsx from "clsx";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 export const menuItems = [
@@ -29,7 +31,7 @@ export const menuItems = [
 
 export default function DesktopHeader() {
   const [isScrolled, setIsScrolled] = useState<boolean>();
-  const router = useRouter();
+  const pathname = usePathname();
 
   const handleClick = (id: string) => {
     const element = document.getElementById(id);
@@ -67,9 +69,7 @@ export default function DesktopHeader() {
               key={index}
               className={clsx(
                 "mx-5 text-20px hover:scale-125",
-                router.asPath.includes(item.title)
-                  ? "border-b-2 border-white"
-                  : ""
+                pathname?.includes(item.title) ? "border-b-2 border-white" : ""
               )}
               onClick={() => handleClick(item.link)}
             >

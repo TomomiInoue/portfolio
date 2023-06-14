@@ -1,5 +1,6 @@
+"use client";
 import clsx from "clsx";
-import { useRouter } from "next/router";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import Menu from "./menu";
 import { atom, useAtom } from "jotai";
@@ -19,7 +20,7 @@ export const useIsMounted = () => {
 export default function MobileHeader() {
   const [isOpen, setIsOpen] = useAtom(menuAtom);
   const [isScrolled, setIsScrolled] = useState<boolean>();
-  const router = useRouter();
+  const pathname = usePathname();
   const isMounted = useIsMounted();
 
   useEffect(() => {

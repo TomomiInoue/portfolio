@@ -28,8 +28,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "apolloClient/queries/experience.ts",
-    "apolloClient/index.ts"
+    "app/apolloClient/queries/experience.ts",
+    "app/apolloClient/index.ts"
   ],
   "exclude": ["node_modules"]
 }

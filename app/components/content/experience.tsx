@@ -1,8 +1,9 @@
-import { useState } from "react";
+"use client";
 import Container from "../common/container";
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
+import { useState } from "react";
 
 const experience = [
   {

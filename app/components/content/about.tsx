@@ -1,3 +1,4 @@
+"use client";
 import Container from "../common/container";
 import StickyBox from "react-sticky-box";
 

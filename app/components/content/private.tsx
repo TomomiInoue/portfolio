@@ -1,3 +1,4 @@
+"use client";
 import Container from "../common/container";
 import Image from "next/image";
 
