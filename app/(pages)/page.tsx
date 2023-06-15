@@ -1,10 +1,10 @@
-import client from "@/app/apolloClient";
-import { GET_ALL_EXPERIENCES } from "@/app/apolloClient/queries/experience";
 import Work from "@/app/components/content/Work/work";
 import About from "@/app/components/content/about";
 import Experience from "@/app/components/content/experience";
 import Hero from "@/app/components/content/hero";
 import Private from "@/app/components/content/private";
+import { gql } from "@apollo/client";
+import { getClient } from "../lib/client";
 
 interface ExperienceProps {
   id: number;
@@ -19,7 +19,23 @@ interface PageProps {
   experiences: ExperienceProps[];
 }
 
-export default function Home({ experiences }: PageProps) {
+async function getExperiences() {
+  const res = await fetch("http://localhost:3000/api/graphql", {
+    cache: "no-store",
+    headers: {
+      "content-type": "",
+    },
+  });
+  const data = await res.json();
+  console.log(data);
+
+  return data?.experiences as any[];
+}
+
+export default async function Home() {
+  const experiences = await getExperiences();
+  // console.log(experiences);
+
   return (
     <main>
       <Hero />
