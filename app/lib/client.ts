@@ -9,14 +9,14 @@ const client = new ApolloClient({
 });
 export default client;
 
-const GRAPHQL_ENDPOINT =
-  process.env.GRAPHQL_ENDPOINT || "https://3000/api/graphql";
+// const GRAPHQL_ENDPOINT =
+//   process.env.GRAPHQL_ENDPOINT || "https://3000/api/graphql";
 
-export const { getClient } = registerApolloClient(() => {
-  return new ApolloClient({
-    cache: new InMemoryCache(),
-    link: new HttpLink({
-      uri: GRAPHQL_ENDPOINT,
-    }),
-  });
-});
+// export const { getClient } = registerApolloClient(() => {
+//   return new ApolloClient({
+//     cache: new InMemoryCache(),
+//     link: new HttpLink({
+//       uri: GRAPHQL_ENDPOINT,
+//     }),
+//   });
+// });

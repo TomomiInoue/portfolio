@@ -3,8 +3,8 @@ import About from "@/app/components/content/about";
 import Experience from "@/app/components/content/experience";
 import Hero from "@/app/components/content/hero";
 import Private from "@/app/components/content/private";
+import client from "@/app/lib/client";
 import { gql } from "@apollo/client";
-import { getClient } from "../lib/client";
 
 interface ExperienceProps {
   id: number;
@@ -19,22 +19,13 @@ interface PageProps {
   experiences: ExperienceProps[];
 }
 
-async function getExperiences() {
-  const res = await fetch("http://localhost:3000/api/graphql", {
-    cache: "no-store",
-    headers: {
-      "content-type": "",
-    },
-  });
-  const data = await res.json();
-  console.log(data);
-
-  return data?.experiences as any[];
-}
+export const dynamic = "force-dynamic";
 
 export default async function Home() {
-  const experiences = await getExperiences();
-  // console.log(experiences);
+  // const { data: experiences } = await client.query<PageProps>({
+  //   query: GET_ALL_EXPERIENCES,
+  // });
+  // console.log(experiences, "data");
 
   return (
     <main>
@@ -46,12 +37,3 @@ export default async function Home() {
     </main>
   );
 }
-
-// export async function getServerSideProps() {
-//   const { data: experiences } = await client.query({
-//     query: GET_ALL_EXPERIENCES,
-//     fetchPolicy: "network-only",
-//   });
-
-//   return { props: { experiences } };
-// }

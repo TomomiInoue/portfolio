@@ -2,12 +2,14 @@ import { gql } from "@apollo/client";
 
 export const GET_ALL_EXPERIENCES = gql`
   query getExperiences {
-    experiences(sort: "data:desc") {
+    experiences {
       id
       company
       position
       period
-      body
+      body {
+        document
+      }
       tech
     }
   }
@@ -20,7 +22,9 @@ export const GET_EXPERIENCE = gql`
       company
       position
       period
-      body
+      body {
+        document
+      }
       tech
     }
   }
