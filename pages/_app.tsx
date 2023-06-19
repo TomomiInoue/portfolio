@@ -1,4 +1,5 @@
 import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer/footer";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
@@ -17,6 +18,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <main>
         <Header />
         <Component {...pageProps} />
+        <Footer />
       </main>
     </>
   );
