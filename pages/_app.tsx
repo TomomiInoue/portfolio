@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <title>Tomomi Inoue Frontend Web Developer</title>
         <meta name="description" content="Tomomi" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.png" />
+        <link rel="icon" href="/favicon.svg" />
         <meta name="theme-color" content="#FFFFFF" />
       </Head>
 
